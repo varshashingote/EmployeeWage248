@@ -6,24 +6,35 @@ using System.Threading.Tasks;
 
 namespace EmployeeWage248
 {
+
     internal class Program
     {
         static void Main(string[] args)
         {
-            int isPresent = 1;
-            Console.WriteLine("Employee wage computation ");
-            //UC1 EmployeeAttendance
+            //constants
 
+            int EMP_RATE_PER_HOUR = 20;
+            int isPresent = 1;
+
+
+            //variable
+            int empHrs = 0;
+            int empWage = 0;
             Random random = new Random();
+
             int EmployeeAttendance = random.Next(0, 2);
-            if (EmployeeAttendance == isPresent) 
+            //Computation
+            if (EmployeeAttendance == isPresent)
             {
-                Console.WriteLine("Employee is Present");
+                empHrs = 8;
             }
             else
             {
-                Console.WriteLine("Employee is Absent");
+                 empHrs = 0;
             }
+            empWage = empHrs * EMP_RATE_PER_HOUR;
+            Console.WriteLine("Emp Wage:"+empWage);
+
             Console.ReadLine();
 
 
