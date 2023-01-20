@@ -21,7 +21,7 @@ namespace EmployeeWage248
             int empWage = 0;
             Random random = new Random();
 
-            int EmpCheck = random.Next(0, 2);
+            int EmpCheck = random.Next(0, 3);
             //Computation
             if (EmpCheck == IS_PART_TIME)
             {
