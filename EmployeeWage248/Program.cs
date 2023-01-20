@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Schema;
 
 namespace EmployeeWage248
 {
@@ -14,6 +15,7 @@ namespace EmployeeWage248
         public const int IS_PART_TIME = 1;
         public const int IS_FULL_TIME = 2;
         public const int NUM_OF_WORKING_DAYS = 2;
+        public const int MAX_HRS_IN_MONTH = 10;
 
 
 
@@ -22,11 +24,12 @@ namespace EmployeeWage248
 
             //variable
             int empHrs = 0;
-            int empWage = 0;
-            int totalEmpWage = 0;
-            for (int day = 0; day < NUM_OF_WORKING_DAYS; day++)
-            {
+            int totalEmpHrs = 0;
 
+            int totalWorkingDays = 0;
+            while (totalEmpHrs <= MAX_HRS_IN_MONTH && totalWorkingDays < NUM_OF_WORKING_DAYS)
+            {
+                totalWorkingDays++;
 
                 Random random = new Random();
 
@@ -47,19 +50,24 @@ namespace EmployeeWage248
                         break;
                 }
 
-                empWage = empHrs * EMP_RATE_PER_HOUR;
-                totalEmpWage += empWage;
-                Console.WriteLine("Emp Wage:" + empWage);
-
-
+                totalEmpHrs += empHrs;
+                Console.WriteLine("Days:" + totalWorkingDays + "Emp Hrs:" + empHrs);
             }
-
-
-            Console.WriteLine("Total Emp Wage :" + totalEmpWage);
+            int totalEmpWage = totalEmpHrs + EMP_RATE_PER_HOUR;
+            Console.WriteLine("total Employee Wage" + totalEmpWage);
             Console.ReadLine();
+
+
         }
+
     }
 }
+
+        
+
+
+    
+
        
     
 
