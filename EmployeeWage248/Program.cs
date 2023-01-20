@@ -10,7 +10,23 @@ namespace EmployeeWage248
     {
         static void Main(string[] args)
         {
+            int isPresent = 1;
             Console.WriteLine("Employee wage computation ");
+            //UC1 EmployeeAttendance
+
+            Random random = new Random();
+            int EmployeeAttendance = random.Next(0, 2);
+            if (EmployeeAttendance == isPresent) 
+            {
+                Console.WriteLine("Employee is Present");
+            }
+            else
+            {
+                Console.WriteLine("Employee is Absent");
+            }
+            Console.ReadLine();
+
+
         }
     }
 }
