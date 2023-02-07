@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,7 +9,7 @@ namespace EmployeeWage248
 {
     public interface IEmployee
     {
-         void AddCompanyEmpWage(string company, int empRatePerHour, int numOfWorkingdays, int maxHoursPerMonth);
+         void addCompanyEmpWage(string company, int empRatePerHour, int numOfWorkingdays, int maxHoursPerMonth);
          void computeEmpWage();
 
     }
