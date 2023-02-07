@@ -9,26 +9,25 @@ using System.Xml.Schema;
 
 namespace EmployeeWage248
 {
-
-    public class EmpWageBuilderArray
+    public class EmpWageBuilder : IEmployee
     {
-
         public const int IS_PART_TIME = 1;
         public const int IS_FUL_TIME = 2;
 
         private int numOfCompany = 0;
         private CompanyEmpWage[] companyEmpWageArray;
 
-        public EmpWageBuilderArray()
+        public EmpWageBuilder()
         {
             this.companyEmpWageArray = new CompanyEmpWage[5];
         }
 
-        public void addCompanyEmpWage(string company, int empRatePerHour, int numOfWorkingDays, int maxHoursPerMonth)
+        public void AddCompanyEmpWage(string company, int empRatePerHour, int numOfWorkingDays, int maxHoursPerMonth)
         {
             companyEmpWageArray[this.numOfCompany] = new CompanyEmpWage(company, empRatePerHour, numOfWorkingDays, maxHoursPerMonth);
             numOfCompany++;
         }
+
 
         public void computeEmpWage()
         {
@@ -67,4 +66,6 @@ namespace EmployeeWage248
         }
     }
 }
-       
+
+
+ 
