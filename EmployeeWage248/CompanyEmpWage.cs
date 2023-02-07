@@ -7,11 +7,15 @@ using System.Threading.Tasks;
 
 namespace EmployeeWage248
 {
+
+
+
     public interface IEmployee
     {
          void addCompanyEmpWage(string company, int empRatePerHour, int numOfWorkingdays, int maxHoursPerMonth);
-         void computeEmpWage();
+        void computeEmpWage();
 
+        int getTotalWage(string company);
     }
     public class CompanyEmpWage
     {
@@ -36,9 +40,7 @@ namespace EmployeeWage248
 
         public string toString()
         {
-            return "Total Emp Wage for company: " + this.company + " is: " + this.totalEmpWage;
+            return "Total Emp Wage for company: " + this.company + "is: " + this.totalEmpWage;
         }
     }
-
-
 }
